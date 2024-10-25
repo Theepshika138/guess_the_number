@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+ 
+</head>
+<body>
+    <h1>Guess the number</h1>
+    <input id="guessnumber">
+    <button onclick="check()">Check</button>
+    <p id="result">You are Wrong/Right</p>
+    <p id="score">Score:0</p>
+
+    <script>
+        var guessnumber = document.getElementById("guessnumber")
+        var res = document.getElementById("result")
+        var randomnumber = Math.floor(Math.random()*10)+1
+        var score = document.getElementById("score")
+        var totalscore=0
+        res.setAttribute("style", "padding-left: 100px;");
+
+        function check(){
+            var enternumber = guessnumber.value
+            if(randomnumber== enternumber){
+                console.log("Right")
+                res.textContent="Right" 
+                totalscore=totalscore+1
+                score.textContent="Score:"+totalscore
+            }
+            else{ 
+                console.log("Wrong")
+                res.textContent="Wrong"
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
